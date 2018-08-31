@@ -6,23 +6,12 @@
                 <image :src="item.url" class="slide-image" />
                 <div class= "bg"></div>
                 <div class = "content">
-                    <div class = "date">
-                        <span class = "day">{{item.day}}</span>
-                        <span class = "month">{{item.month}}</span>
-                        <span></span>
-                        <span class="year">{{item.year}}</span>
-                    </div>
-                    <div class = "english">{{item.content}}</div>
-                    <div class = "translation">{{item.text}}</div>
-                    <div class = "author">{{item.author}}</div>
+                    <div class = "title">{{item.content}}</div>
+                    <div class = "text">{{item.text}}</div>
                 </div>
             </div>
         </swiper-item>
     </swiper>
-    <!-- <tool logo = "../../assets/img/share-icon.png" text = "转发好友" class = "share-friend"/> -->
-    <div class = "tools" v-show="showTools" @click.stop>
-        
-    </div>
 </div>
 </template>
 
@@ -30,15 +19,7 @@
 export default {
     data() {
         return {
-            motto: 'Hello World',
-            userInfo: {},
-            currentItemId: '',
-            currentDate: '',
             currentIndex: 0,
-            id: 4,
-            postText: '生成海报',
-            postImg: '/static/img/poster.png',
-            showTools: false,
             list: [
                 {
                     url: '/static/img/16.jpeg',
@@ -166,25 +147,7 @@ export default {
             & > div {
                 margin: 10px 0;
             }
-            .date {
-                font-family: HelveticaNeue;
-                font-size: 20px;
-                font-weight: 300;
-                text-align: left;
-                color: #28bea0;
-                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-
-                .day {
-                    font-family: HelveticaNeue;
-                    font-size: 50px;
-                    font-weight: 300;
-                    text-align: left;
-                    color: #28bea0;
-                    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-                    margin-right: 10px;
-                }
-            }
-            .english {
+            .title {
                 font-family: HelveticaNeue;
                 font-size: 16px;
                 font-weight: 500;
@@ -193,75 +156,14 @@ export default {
                 color: #eeeeee;
                 text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
             }
-            .translation {
+            .text {
                 font-size: 14px;
                 text-align: justify;
                 color: #cccccc;
                 text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
             }
-            .author {
-                text-align: right;
-                font-size: 14px;
-
-                color: #cccccc;
-                text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-            }
         }
     }
 
-    .tools {
-        position: absolute;
-        width: 110px;
-        height: 151px;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-    }
-    .share-friend {
-        top: 0;
-    }
-
-    .poster {
-        top: 57px;
-    }
-
-    .more-mp {
-        top: 114px;
-    }
-    .tool {
-        display: flex;
-        position: absolute;
-        right: 0;
-        width: 110px;
-        height: 37px;
-        border-radius: 0;
-        border-top-left-radius: 22.5px;
-        border-bottom-left-radius: 22.5px;
-        -webkit-backdrop-filter: blur(0);
-        backdrop-filter: blur(0);
-        background-color: #ffffff;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 10px;
-        box-sizing: border-box;
-        line-height: 1.5;
-
-        .logo {
-            display: block;
-            width: 20px;
-            height: 20px;
-        }
-
-        .text {
-            width: 60px;
-            height: 21px;
-            font-family: PingFang-SC;
-            font-size: 15px;
-            font-weight: 500;
-            text-align: left;
-            color: #555555;
-            text-shadow: 0 2px 6px rgba(35, 152, 128, 0.3);
-        }
-    }
 }
 </style>
